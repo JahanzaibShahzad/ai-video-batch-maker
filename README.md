@@ -104,6 +104,13 @@ python generate.py --model veo --aspect 9:16 --duration 10
 - Each clip takes a few minutes to generate. 10 prompts can take 30 to 60
   minutes in total.
 - If you get a 401 error, your API key is missing or wrong. Repeat Step 4.
+- If you get a 402 error, it means "insufficient pollen balance". Pollen is
+  pollinations.ai's free credit currency. New accounts can show 0 pollen.
+  Fix: open https://enter.pollinations.ai, check your balance, and complete
+  the free Quests (for example starring their GitHub repo) to earn free
+  pollen. Free pollen grants also renew daily. No credit card is needed.
+  The default model `ltx-2` is the free-tier video model; paid models like
+  `veo` need more pollen.
 - If you get rate limited (429), the script waits 60 seconds and retries
   automatically.
 

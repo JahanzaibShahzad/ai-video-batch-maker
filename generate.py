@@ -29,7 +29,7 @@ except ImportError:
     sys.exit(1)
 
 API_BASE = "https://gen.pollinations.ai/video"
-VALID_MODELS = ("wan-fast", "wan", "veo", "seedance-2.0")
+VALID_MODELS = ("ltx-2", "wan-fast", "wan", "veo", "seedance-2.0")
 VALID_ASPECTS = ("16:9", "9:16")
 
 KEY_HELP = (
@@ -142,7 +142,7 @@ def main():
     )
     parser.add_argument("--prompts", default="prompts.txt", help="Prompt file (.txt or .json).")
     parser.add_argument("--out", default="output", help="Folder to save MP4 files in.")
-    parser.add_argument("--model", default="wan-fast",
+    parser.add_argument("--model", default="ltx-2",
                         help=f"Video model to use ({', '.join(VALID_MODELS)}).")
     parser.add_argument("--duration", type=int, default=8,
                         help="Clip length in seconds.")
