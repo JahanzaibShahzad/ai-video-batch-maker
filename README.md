@@ -3,7 +3,25 @@
 Give this tool a file of prompts. It makes one AI video (MP4) for every prompt,
 automatically. It runs on the **free** pollinations.ai video API.
 
-## How it works
+## Method 2: 100% FREE with Google Colab (no API key)
+
+Prefer zero setup and zero signup? Use the included notebook, which runs the
+open-source LTX-Video 2B model on Google Colab's free GPU:
+
+1. Go to **https://colab.research.google.com**.
+2. Click **File > Open notebook**, choose the **GitHub** tab, and paste
+   **https://github.com/JahanzaibShahzad/ai-video-batch-maker**
+3. Open **colab-ltx-video.ipynb**.
+4. Go to **Runtime > Change runtime type**, set Hardware accelerator to
+   **T4 GPU**, then Save.
+5. Edit the prompts cell, then **Runtime > Run all**. Your videos download as
+   a ZIP at the end.
+
+No API key, no payment, no pollen credits. Free Colab can disconnect on long
+runs, so keep batches to 3 to 5 prompts at a time.
+
+## How it works (Method 1: pollinations.ai API)
+
 
 1. You write your video prompts in `prompts.txt` (one prompt per line).
 2. You run `python generate.py`.
