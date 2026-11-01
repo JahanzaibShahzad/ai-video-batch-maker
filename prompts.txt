@@ -1,0 +1,9 @@
+# Add one video prompt per line. Lines starting with # are ignored.
+# Keep prompts short and vivid, like a movie scene description.
+# If a prompts.json file exists in this folder, it is used instead of this file.
+
+A cute claymation-style baby in a yellow t-shirt laughing in a sunny kitchen, 3D animated short film look
+
+Drone shot flying over a tropical island at sunset, turquoise water and palm trees, cinematic
+
+A robot barista pouring latte art in a neon-lit cafe at night, steam rising, close-up shot
