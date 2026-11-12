@@ -132,6 +132,48 @@ python generate.py --model veo --aspect 9:16 --duration 10
 - If you get rate limited (429), the script waits 60 seconds and retries
   automatically.
 
+## Method 3: FAST CLOUD with fal.ai (no local GPU, pay per second)
+
+Want Flow-level quality and fast renders without a gaming PC? Use
+`fal_generate.py`. The same `prompts.txt` file works; the videos render on
+fal.ai cloud GPUs and download automatically. Nothing to install, the
+script uses only the Python standard library.
+
+1. Sign up at **https://fal.ai** and add a small prepaid credit balance
+   (Billing page). There is no monthly fee; you pay per second of video.
+2. Create an API key at **https://fal.ai/dashboard/keys**.
+3. Set the key. Windows: `set FAL_KEY=your_key_here`
+   Mac/Linux: `export FAL_KEY=your_key_here`
+4. Run it:
+
+```
+python fal_generate.py
+```
+
+Videos appear in the `output-fal/` folder as `fal-video-001.mp4`, and so on.
+
+| Flag | Default | What it does |
+| ---- | ------- | ------------ |
+| `--model` | `wan` | `wan` = Wan 2.7 (cheap, fast, 720p), `wan25` = Wan 2.5, `veo` = Google Veo 3.1 (the Flow model, with sound), `ltx` = LTX-2 (video with audio) |
+| `--endpoint` | none | Any full fal.ai endpoint id, overrides `--model` |
+| `--duration` | `5` | Clip length in seconds (Wan: 5, 10 or 15; Veo: 4, 6 or 8) |
+| `--aspect` | `9:16` | `9:16` for Shorts, Reels and TikTok; `16:9` for YouTube |
+| `--out` | `output-fal` | Folder to save videos in |
+
+Rough prices (Nov 2026): Wan about $0.05 to $0.20 per second depending on
+version and resolution, Veo 3.1 Fast about $0.10 to $0.15 per second,
+Veo 3.1 standard $0.40 per second with audio. A 5 second Wan clip costs
+roughly $0.25 to $1.00 and usually renders in about a minute.
+
+Example: vertical Shorts with Google's Veo 3.1 (same model as Google Flow):
+
+```
+python fal_generate.py --model veo --aspect 9:16
+```
+
+Like `generate.py`, the script resumes: videos that already exist in the
+output folder are skipped on the next run.
+
 ## License
 
 MIT. See the `LICENSE` file.
